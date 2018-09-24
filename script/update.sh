@@ -10,6 +10,9 @@ LC_ALL=$LANG
 locale-gen --purge $LANG
 update-locale LANG=$LANG LC_ALL=$LC_ALL
 
+# Install language-pack for japanese
+apt-get -y install language-pack-ja language-pack-gnome-ja language-pack-ja-base language-pack-gnome-ja-base
+
 # Disable the release upgrader
 echo "==> Disabling the release upgrader"
 sed -i.bak 's/^Prompt=.*$/Prompt=never/' /etc/update-manager/release-upgrades
